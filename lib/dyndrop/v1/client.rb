@@ -90,8 +90,9 @@ module Dyndrop::V1
       @base.info
     end
 
-    def login(username, password)
-      @base.token = Dyndrop::AuthToken.from_token_info(@base.get_token(username, {:password => password}))
+    # Identifier can be a username or an email
+    def login(identifier, password)
+      @base.token = Dyndrop::AuthToken.from_token_info(@base.get_token(identifier, {:password => password}))
     end
 
 

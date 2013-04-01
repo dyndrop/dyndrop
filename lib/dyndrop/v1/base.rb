@@ -8,8 +8,8 @@ require "dyndrop/errors"
 module Dyndrop::V1
   class Base < Dyndrop::BaseClient
 
-    def get_token(email, payload)
-      post("1", "users", email, "tokens", :content => :json, :accept => :json, :payload => payload)
+    def get_token(identifier, payload)
+      post("1", "users", identifier, "tokens", :content => :json, :accept => :json, :payload => payload)
     end
 
     # Users
